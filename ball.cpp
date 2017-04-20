@@ -3,14 +3,45 @@
  ** author: Andrea Vedaldi
  **/
 
+/**
+ * Editor: Pablo Alves Muro Martinez
+ * Edições nas linhas: 15 a 29, 30 a 43, 66
+**/
+
 #include "ball.h"
 
 #include <iostream>
 
-Ball::Ball()
-: r(0.1), x(0), y(0), vx(0.3), vy(-0.1), g(9.8), m(1),
-xmin(-1), xmax(1), ymin(-1), ymax(1)
-{ }
+//Construtor com parâmetros de inicialização da posição
+Ball::Ball(double positionX , double positionY){
+  r = 0.1;
+  x = positionX;
+  y = positionY;
+  vx = 0.3;
+  vy = -0.1;
+  g = 9.8;
+  m = 1;
+  xmin = -1;
+  xmax = 1;
+  ymin = -1;
+  ymax = 1;
+  
+}
+
+//Metodos de GET e SET da posição
+double Ball::getPositionX(){
+  return x;
+}
+double Ball::getPositionY(){
+  return y;
+}
+void Ball::setPositionX(double positionX){
+  x = positionX;
+}
+void Ball::setPositionY(double positionY){
+  y = positionY;
+}
+
 
 void Ball::step(double dt)
 {
@@ -29,7 +60,8 @@ void Ball::step(double dt)
   }
 }
 
+//Metodo display usando os métodos GET E SET
 void Ball::display()
 {
-  std::cout<<x<<" "<<y<<std::endl ;
+  std::cout<<Ball::getPositionX()<<" "<<Ball::getPositionY()<<std::endl ;
 }
