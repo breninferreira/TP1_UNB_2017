@@ -131,6 +131,7 @@ $ ./bola
 0.1 0.671556
 0.09 0.691222
 
-##Gráfico do movimento
 
+## Gráfico do movimento
 
+![Gráfico]("https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/grafico.png")
