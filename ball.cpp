@@ -63,5 +63,5 @@ void Ball::step(double dt)
 //Metodo display usando os métodos GET E SET
 void Ball::display()
 {
-  std::cout<<Ball::getPositionX()<<" "<<Ball::getPositionY()<<std::endl ;
+  std::cout<<Ball::getPositionX()<<" "<<Ball::getPositionY()<<"\n"<<std::endl ;
 }
