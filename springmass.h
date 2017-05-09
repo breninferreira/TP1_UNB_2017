@@ -104,7 +104,7 @@ protected:
 class SpringMass : public Simulation
 {
 public:
-  SpringMass(double gravity = MOON_GRAVITY) ;
+  SpringMass(Mass* mass1, Mass* mass2, Spring* spring, double gravity = MOON_GRAVITY) ;
   void step(double dt) ;
   void display() ;
   double getEnergy() const ;
@@ -137,9 +137,10 @@ protected:
    */
    
    double dt;
-   Mass mass
+   Mass mass;
    Mass *mass1;
    Mass *mass2;
+   Spring spring;
    double naturalLength;
    double stiffness;
    double damping;

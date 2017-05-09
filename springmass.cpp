@@ -70,8 +70,8 @@ double Mass::getEnergy(double gravity) const
      com relacao a seu centro, e nao ao ponto de impacto com 
      o solo.
    */
-   KineticEnergy = (mass * velocity.norm2())/2;
-   PotentialEnergy = tmass * gravity * (position.y - radius - ymin);
+   double KineticEnergy = (mass * velocity.norm2())/2;
+   double PotentialEnergy = mass * gravity * (position.y - radius - ymin);
    energy = KineticEnergy + PotentialEnergy;
 
   return energy ;
@@ -112,7 +112,7 @@ void Mass::step(double dt)
   }
  
   if (ymin + radius <= yPos && yPos <= ymax - radius) {
-    position.y = yp ;
+    position.y = yPos ;
     velocity.y = velocity.y - aceleration * dt ;
   } else {
     velocity.y = -velocity.y ;
@@ -131,12 +131,12 @@ naturalLength(naturalLength), stiffness(stiffness), damping(damping)
 
 Mass * Spring::getMass1() const
 {
-  return mass1 ;
+  return mass1;
 }
 
 Mass * Spring::getMass2() const
 {
-  return mass2 ;
+  return mass2;
 }
 
   /* INCOMPLETE: TYPE YOUR CODE HERE 
@@ -174,23 +174,14 @@ Vector2 Spring::getForce() const
 {
   Vector2 F ;
 
-  double u12, v12, F1;
+  double l = getLength();
+  Vector2 u12 = (1.0/l) * (mass2->getPosition() - mass1->getPosition());
+  Vector2 unitary = u12/l;
+  double v12 = dot((mass2->getVelocity() - mass1->getVelocity()), unitary);
+  double forceMode = (naturalLength - l) * stiffness + v12 * damping;
+  F = forceMode * unitary;
 
-  Vector2 x1 = mass1->getPosition();
-  Vector2 x2 = mass2->getPosition();
-
-  Vector2 velocity1 = mass1->getVelocity();
-  Vector2 velocity2 = mass2->getVelocity();
-
-  if((x1.x - x2.x - naturalLength) != 0){
-      if((x2.x - x1.x) < 0){
-          u12 = -1;
-      }else{
-        u12 = 1;
-      }
-      v12 = dot((velocity2 - velocity1), u12)*u12;
-  }
-
+  return F ;
   return F ;
 }
 
@@ -223,8 +214,8 @@ std::ostream& operator << (std::ostream& os, const Spring& s)
 // class SpringMass : public Simulation
 /* ---------------------------------------------------------------- */
 
-SpringMass::SpringMass(double gravity)
-: gravity(gravity)
+SpringMass::SpringMass(Mass *mass1, Mass *mass2, Spring *spring, double gravity)
+: mass1(mass1), mass2(mass2), spring(spring), gravity(gravity)
 { }
 
 void SpringMass::display()
@@ -252,14 +243,14 @@ double SpringMass::getEnergy() const
      + a soma das energias de todas as molas.
    */
    
-   double energy = mass1->getEnergy(gravity) + mass2->getEnergy(gravity) + spring->getEnergy() ;
+   energy = mass1->getEnergy(gravity) + mass2->getEnergy(gravity) + spring->getEnergy() ;
 
   return energy ;
 }
 
 void SpringMass::step(double dt)
 {
-  Vector2 g(0,-gravity) ; // Vetor da gravidade, i.e.,
+  // Vetor da gravidade, i.e.,
   // aceleracao apontando para baixo.
   
   /* INCOMPLETE: TYPE YOUR CODE HERE 
@@ -273,6 +264,14 @@ void SpringMass::step(double dt)
      3. Atualize a posicao e velocidade de todas as massas,
         i.e., execute o metodo step() delas.
    */
+  Vector2 g(0,-gravity);
+  mass1->setForce(g);
+  mass2->setForce(g);
+  mass1->addForce(spring->getForce());
+  mass2->addForce(-1.0*spring->getForce());
+  mass1->step(dt);
+  mass2->step(dt);
+   
 }
 
 
