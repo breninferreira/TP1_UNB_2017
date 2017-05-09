@@ -10,15 +10,20 @@ Projeto que visa estudar a orientação a objeto com uso da linguagem C++
 - Arquivos do projeto encontrados no site [http://www.robots.ox.ac.uk/~victor/teaching/labs/b16/](http://www.robots.ox.ac.uk/~victor/teaching/labs/b16/)
 - Ferramenta de versionamento: Git
 
-## Conteúdo dos arquivos
+
+
+
+## Projeto 1 - Ball
+
+### Conteúdo dos arquivos
 **ball.h** : Possui a definição, métodos da class Ball
 
 **ball.cpp** : Implementa a classe Ball
 
-**test_ball.cpp** : Inicializa um objeto do tipo Ball e roda um loop sobre ele, imprimindo as coordenadas do seu movimento na tela
+**test-ball.cpp** : Inicializa um objeto do tipo Ball e roda um loop sobre ele, imprimindo as coordenadas do seu movimento na tela
 
 
-## Execução do projeto
+### Execução do projeto
 
 Compilar o programa com o comando 
 
@@ -28,7 +33,7 @@ $ chmod 775 bola
 $ ./bola
 ```
 
-## Saida Gerada
+### Saida Gerada
 
 0.71 0.691222
 
@@ -231,6 +236,26 @@ $ ./bola
 0.09 0.691222
 
 
-## Gráfico do movimento
+### Gráfico do movimento
 
 ![Gráfico](https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/grafico.png)
+
+## Projeto 2 - SpringMass
+
+### Conteúdo dos arquivos
+**springmass.h** : Possui a definição e métodos das classes Mass, Spring e SpringMass
+
+**springmass.cpp** : Implementa a classe do arquivos springmass.h
+
+**test-springmass.cpp** : Inicializa um objeto do tipo SpringMass e roda um loop sobre ele, imprimindo as coordenadas do seu movimento na tela
+
+
+### Execução do projeto
+
+Compilar o programa com o comando 
+
+```
+$ g++ springmass.cpp test-springmass.cpp -o bola
+$ chmod 775 bola
+$ ./bola
+```
