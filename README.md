@@ -1,4 +1,12 @@
-# Projeto TP1 1º/2017
+# Projeto-TP1-1º/2017
+
+[Parte 1 - Ball](#parte-1)
+
+[Parte 2 - SpringMass](#parte-2)
+
+[Parte 3 - Graphics](#parte-3)
+
+# Parte 1
 
 Projeto que visa estudar a orientação a objeto com uso da linguagem C++
 
@@ -240,7 +248,7 @@ $ ./bola
 
 ![Gráfico](https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/grafico.png)
 
-## Projeto 2 - SpringMass
+# Parte 2
 
 ### Conteúdo dos arquivos
 **springmass.h** : Possui a definição e métodos das classes Mass, Spring e SpringMass
@@ -259,3 +267,7 @@ $ g++ springmass.cpp test-springmass.cpp -o bola
 $ chmod 775 bola
 $ ./bola
 ```
+
+# Parte 3
+
+
