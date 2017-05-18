@@ -267,9 +267,9 @@ $ ./bola
 Compilar o programa com o comando 
 
 ```
-$ g++ springmass.cpp test-springmass.cpp -o bola
-$ chmod 775 bola
-$ ./bola
+$ g++ springmass.cpp test-springmass.cpp -o mola
+$ chmod 775 mola
+$ ./mola
 ```
 
 ### Algumas da Saida Gerada
