@@ -257,6 +257,9 @@ $ ./bola
 
 **test-springmass.cpp** : Inicializa um objeto do tipo SpringMass e roda um loop sobre ele, imprimindo as coordenadas do seu movimento, tamanho da mola e a energía do sistema na tela
 
+### Diagrama 2
+
+![Diagrama 2](https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/Diagrama_2.png)
 
 ### Execução do projeto
 
@@ -305,6 +308,9 @@ $ ./bola
 
 **test-springmass-graphics.cpp** : Implementa a classe SpringMassDrawable, que herda métodos da SpringMass e cria as configurações para a aparição da figura na tela
 
+### Diagrama 3
+
+![Diagrama 3](https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/Diagrama_3.png)
 
 ### Execução do projeto
 
