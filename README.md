@@ -255,7 +255,7 @@ $ ./bola
 
 **springmass.cpp** : Implementa a classe do arquivos springmass.h
 
-**test-springmass.cpp** : Inicializa um objeto do tipo SpringMass e roda um loop sobre ele, imprimindo as coordenadas do seu movimento na tela
+**test-springmass.cpp** : Inicializa um objeto do tipo SpringMass e roda um loop sobre ele, imprimindo as coordenadas do seu movimento, tamanho da mola e a energía do sistema na tela
 
 
 ### Execução do projeto
@@ -268,6 +268,53 @@ $ chmod 775 bola
 $ ./bola
 ```
 
+### Algumas da Saida Gerada
+
+(-0.499444,-0.0009)(0.499444,-0.0009)$0.998889 en:0.160011
+
+(-0.497798,-0.0036)(0.497798,-0.0036)$0.995595 en:0.160014
+
+(-0.495123,-0.0081)(0.495123,-0.0081)$0.990246 en:0.160021
+
+(-0.49153,-0.0144)(0.49153,-0.0144)$0.98306 en:0.160033
+
+(-0.48717,-0.0225)(0.48717,-0.0225)$0.974341 en:0.16005
+
+(-0.482231,-0.0324)(0.482231,-0.0324)$0.964462 en:0.160071
+
+(-0.476927,-0.0441)(0.476927,-0.0441)$0.953854 en:0.160095
+
+(-0.47149,-0.0576)(0.47149,-0.0576)$0.942979 en:0.160118
+
+(-0.46616,-0.0729)(0.46616,-0.0729)$0.93232 en:0.16014
+
+(-0.461176,-0.09)(0.461176,-0.09)$0.922352 en:0.160159
+
+(-0.456762,-0.1089)(0.456762,-0.1089)$0.913524 en:0.160173
+
+(-0.453119,-0.1296)(0.453119,-0.1296)$0.906239 en:0.160181
+
+(-0.450417,-0.1521)(0.450417,-0.1521)$0.900834 en:0.160185
+
+(-0.448783,-0.1764)(0.448783,-0.1764)$0.897566 en:0.160186
+
 # Parte 3
 
+### Conteúdo dos arquivos
+**graphics.h e graphics.cpp** : Possui a definição e métodos das classes que utilizam OpenGL para o desenho das figuras na tela
+
+**test-springmass-graphics.cpp** : Implementa a classe SpringMassDrawable, que herda métodos da SpringMass e cria as configurações para a aparição da figura na tela
+
+
+### Execução do projeto
+
+Compilar o programa com o comando 
+
+```
+$ g++ springmass.cpp graphics.cpp test-springmass-graphics.cpp -lGL - lGLU -lglu -o springmass
+$ chmod 775 springmass
+$ ./springmass
+```
+
+### Saida Gerada
 
