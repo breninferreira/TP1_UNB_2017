@@ -318,3 +318,6 @@ $ ./springmass
 
 ### Saida Gerada
 
+![Exemplo1](https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/Saida-parte3_1.jpeg)
+
+![Exemplo2](https://raw.githubusercontent.com/pablomuro/TP1_UNB_2017/master/Saida-parte3_2.jpeg)
