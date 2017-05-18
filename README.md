@@ -2,14 +2,6 @@
 
 Projeto que visa estudar a orientação a objeto com uso da linguagem C++
 
-[Parte 1 - Ball](#parte-1)
-
-[Parte 2 - SpringMass](#parte-2)
-
-[Parte 3 - Graphics](#parte-3)
-
-# Parte 1
-
 ## Material usado no projeto
 
 - Compilador: g++ (Ubuntu 4.8.4-2ubuntu1~14.04.1) 4.8.4
@@ -21,8 +13,15 @@ Projeto que visa estudar a orientação a objeto com uso da linguagem C++
 ```
 sudo apt-get install freeglut3 freeglut3-dev
 ```
+## Links
 
-## Projeto 1 - Ball
+[Parte 1 - Ball](#parte-1)
+
+[Parte 2 - SpringMass](#parte-2)
+
+[Parte 3 - Graphics](#parte-3)
+
+# Parte 1
 
 ### Conteúdo dos arquivos
 **ball.h** : Possui a definição, métodos da class Ball
