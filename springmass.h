@@ -57,15 +57,15 @@ public:
   void step(double dt) ;
 
 protected:
-  Vector2 position ; 
+  Vector2 position ;
   Vector2 velocity ;
   Vector2 force ;
   double mass ;
-  double radius ; // Assume-se que as massas sao esferas.
+  double radius ;
 
-  double xmin ; // Limites, i.e., dimensoes da caixa onde o sistema se encontra,
-  double xmax ; // onde x sao dimensoes horizontais e
-  double ymin ; // y sao dimensoes verticais.
+  double xmin ;
+  double xmax ;
+  double ymin ;
   double ymax ;
 } ;
 
@@ -76,7 +76,7 @@ protected:
 class Spring
 {
 public:
-  Spring(Mass * mass1, Mass * mass2, double naturalLength, double stiffness, double damping = 0.01) ;
+  Spring(Mass * mass1, Mass * mass2, double naturalLength, double stiff, double damping = 0.01) ;
   Mass * getMass1() const ;
   Mass * getMass2() const ;
   Vector2 getForce() const ;
@@ -84,17 +84,13 @@ public:
   double getEnergy() const ;
 
 protected:
-  /* INCOMPLETE: TYPE YOUR CODE HERE 
-     Insira atributos protegidos que permitem calcular a forca 
-     e a energia de uma mola. Dica: veja o construtor acima.
-     Adicione tambem 2 ponteiros para objetos do tipo Mass 
-     (um para cada extremidade da mola).
-   */
-   Mass * mass1;
-   Mass * mass2;
-   double naturalLength;
-   double stiffness;
-   double damping;
+/* begin remove */
+  double naturalLength ;
+  double stiffness ;
+  double damping ;
+  Mass * mass1 ;
+  Mass * mass2 ;
+/* end remove */
 } ;
 
 /* ---------------------------------------------------------------- */
@@ -104,51 +100,26 @@ protected:
 class SpringMass : public Simulation
 {
 public:
-  SpringMass(Mass* mass1, Mass* mass2, Spring* spring, double gravity = MOON_GRAVITY) ;
+  SpringMass(double gravity = MOON_GRAVITY) ;
   void step(double dt) ;
   void display() ;
   double getEnergy() const ;
 
-  /* INCOMPLETE: TYPE YOUR CODE HERE 
-     Adicione dois metodos que permitem construir o sistema,
-     - um para adicionar uma massa, que teria como entrada
-       um objeto da classe Mass, e
-     - outro para adicionar uma mola, que teria como entrada
-       - dois indices (um para cada massa que sera 
-         conectada a esta mola);
-       - os outros parametros necessarios para se "construir"
-         uma mola.       
-   */
-   void setMass(Mass mass);
-   void setSpring(Mass *mass1, Mass *mass2, double naturalLength, double stiffness, double damping);
+/* begin remove */
+  int addMass(Mass m) ;
+  void addSpring(int i, int j, double length, double stiffness) ;
+/* end remove */
 
 protected:
   double gravity ;
 
-  /* INCOMPLETE: TYPE YOUR CODE HERE 
-     Defina dois tipos de vetores, 
-     - um para massas e 
-     - outro para molas.
-     Para definir vetores de tipos, use:
-     typedef std::vector<NomeDaClasse> nome_do_tipo_t;
-     Adicione, como atributo privado, 
-     - um vetor de massas e
-     - um vetor de molas.
-   */
-   
-   double dt;
-   Mass mass;
-   Mass *mass1;
-   Mass *mass2;
-   Spring spring;
-   double naturalLength;
-   double stiffness;
-   double damping;
-   
-private:
-  std::vector<Mass> MassVector;
-  std::vector<Spring> SpringVector;
+/* begin remove */
+  typedef std::vector<Mass> masses_t ;
+  typedef std::vector<Spring> springs_t ;
 
+  masses_t masses ;
+  springs_t springs ;
+/* end remove */
 } ;
 
 #endif /* defined(__springmass__) */
