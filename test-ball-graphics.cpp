@@ -18,7 +18,7 @@ private:
 
 public:
   BallDrawable()
-  : figure("Bouncing ball")
+  : figure("Ball")
   {
     figure.addDrawable(this) ;
   }

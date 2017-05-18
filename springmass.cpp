@@ -160,6 +160,7 @@ SpringMass::SpringMass(double gravity)
 
 void SpringMass::display()
 {
+
 /* begin remove */
   for (int i = 0 ; i < (int)masses.size() ; ++i) {
     std::cout<<masses[i] ;
