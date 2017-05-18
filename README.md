@@ -1,5 +1,7 @@
 # Projeto-TP1-1º/2017
 
+Projeto que visa estudar a orientação a objeto com uso da linguagem C++
+
 [Parte 1 - Ball](#parte-1)
 
 [Parte 2 - SpringMass](#parte-2)
@@ -7,8 +9,6 @@
 [Parte 3 - Graphics](#parte-3)
 
 # Parte 1
-
-Projeto que visa estudar a orientação a objeto com uso da linguagem C++
 
 ## Material usado no projeto
 
