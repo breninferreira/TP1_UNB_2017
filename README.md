@@ -17,9 +17,10 @@ Projeto que visa estudar a orientação a objeto com uso da linguagem C++
 - Bibliotecas padrões do compilador
 - Arquivos do projeto encontrados no site [http://www.robots.ox.ac.uk/~victor/teaching/labs/b16/](http://www.robots.ox.ac.uk/~victor/teaching/labs/b16/)
 - Ferramenta de versionamento: Git
-
-
-
+- Biblioteca OpenGL/Glut
+```
+sudo apt-get install freeglut3 freeglut3-dev
+```
 
 ## Projeto 1 - Ball
 
@@ -304,9 +305,9 @@ $ ./bola
 # Parte 3
 
 ### Conteúdo dos arquivos
-**graphics.h e graphics.cpp** : Possui a definição e métodos das classes que utilizam OpenGL para o desenho das figuras na tela
+**graphics.h e graphics.cpp** : Possui a definição e implementação dos atributos e métodos das classes que utilizam OpenGL/GLUT para o desenho das figuras na tela
 
-**test-springmass-graphics.cpp** : Implementa a classe SpringMassDrawable, que herda métodos da SpringMass e cria as configurações para a aparição da figura na tela
+**test-springmass-graphics.cpp** : Implementa a classe SpringMassDrawable, que herda métodos e atributos da classe SpringMass e seta as configurações e objetos necessário para mostrar a figura e seu movimento na tela
 
 ### Diagrama 3
 
